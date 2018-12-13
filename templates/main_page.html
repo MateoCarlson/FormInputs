@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="description" content="">
-    <title>Form Input Template</title>
+    <title>O.W.L Rankings</title>
     <link rel="stylesheet" href="/static/css/custom.css">
     <link rel="stylesheet" href="/static/css/bootstrap.min.css">
     <!--<script src="../static/js/bootstrap.min.js"></script>-->
@@ -18,31 +18,23 @@
       <form action="{{ url_for('process_inputs') }}" method="post">
         <div class="form-group">
           <label for="input_name">First Name</label>
-          <input type="text" class="form-control" name="input_name"  id="input_name" placeholder="Fred Flintstone">
+          <input type="text" class="form-control" name="input_name"  id="input_name" placeholder="Jeff Kaplan">
         </div>
         <div class="form-group">
-          <label for="input_dropdown">Example select</label>
-          <select class="form-control" name="input_dropdown" id="input_dropdown">
-            <option>1 fish</option>
-            <option>2 fish</option>
-            <option>red fish</option>
-            <option>the spanish inquisition</option>
-            <option>blue fish</option>
+          <label for="input_playstyle">How do you play most games?</label>
+          <select class="form-control" name="input_playstyle" id="input_playstyle">
+            <option value="Damage">Full on agression, no holding back.</option>
+            <option>Let the enemy come to you, then crush them.</option>
+            <option>Wait for the right moment, then save your team.</option>
+            <option>Stay in the back, and let others do your dirty work.</option>
           </select>
         </div>
         <div class="form-group">
-          <label for="input_select">Example multiple select</label>
-          <select multiple class="form-control" name="input_select" id="input_select">
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option>5</option>
+          <label for="input_movement">How much movement do you like?</label>
+          <select class="form-control" name="input_movement" id="input_movement">
+            <option>Constant motion, no down time.</option>
+            <option>Slow and methodical</option>
           </select>
-        </div>
-        <div class="form-group">
-          <label for="input_freeform">Example textarea</label>
-          <textarea class="form-control" name="input_freeform" id="input_freeform" rows="3"></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
@@ -51,7 +43,7 @@
       {% if input_data %} {{ input_data }} {% endif %}
       <br />
       {% if output %} {{ output }} {% endif %}
+      {% if group == 1 %} Genji, Tracer, Dooomfist, Pharah, and Soldier:76 {% endif %}
     </div>
   </body>
 </html>
-
